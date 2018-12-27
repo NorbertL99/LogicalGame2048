@@ -30,15 +30,15 @@
         {
             this.menu = new System.Windows.Forms.MenuStrip();
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.scoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.seeInstruction = new System.Windows.Forms.ToolStripMenuItem();
-            this.seeAuthor = new System.Windows.Forms.ToolStripMenuItem();
-            this.seeScores = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetScores = new System.Windows.Forms.ToolStripMenuItem();
             this.newGame = new System.Windows.Forms.ToolStripMenuItem();
             this.saveGame = new System.Windows.Forms.ToolStripMenuItem();
             this.loadGame = new System.Windows.Forms.ToolStripMenuItem();
+            this.scoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seeScores = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetScores = new System.Windows.Forms.ToolStripMenuItem();
+            this.informationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seeInstruction = new System.Windows.Forms.ToolStripMenuItem();
+            this.seeAuthor = new System.Windows.Forms.ToolStripMenuItem();
             this.number1 = new System.Windows.Forms.Label();
             this.field1 = new System.Windows.Forms.PictureBox();
             this.field2 = new System.Windows.Forms.PictureBox();
@@ -114,6 +114,27 @@
             this.gameToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.gameToolStripMenuItem.Text = "Game";
             // 
+            // newGame
+            // 
+            this.newGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.newGame.Name = "newGame";
+            this.newGame.Size = new System.Drawing.Size(133, 22);
+            this.newGame.Text = "New game";
+            // 
+            // saveGame
+            // 
+            this.saveGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.saveGame.Name = "saveGame";
+            this.saveGame.Size = new System.Drawing.Size(133, 22);
+            this.saveGame.Text = "Save game";
+            // 
+            // loadGame
+            // 
+            this.loadGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.loadGame.Name = "loadGame";
+            this.loadGame.Size = new System.Drawing.Size(133, 22);
+            this.loadGame.Text = "Load game";
+            // 
             // scoreToolStripMenuItem
             // 
             this.scoreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -122,6 +143,20 @@
             this.scoreToolStripMenuItem.Name = "scoreToolStripMenuItem";
             this.scoreToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.scoreToolStripMenuItem.Text = "Score";
+            // 
+            // seeScores
+            // 
+            this.seeScores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.seeScores.Name = "seeScores";
+            this.seeScores.Size = new System.Drawing.Size(179, 22);
+            this.seeScores.Text = "See TOP 10 scores";
+            // 
+            // resetScores
+            // 
+            this.resetScores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.resetScores.Name = "resetScores";
+            this.resetScores.Size = new System.Drawing.Size(179, 22);
+            this.resetScores.Text = "Reset TOP 10 scores";
             // 
             // informationsToolStripMenuItem
             // 
@@ -136,56 +171,22 @@
             // 
             this.seeInstruction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.seeInstruction.Name = "seeInstruction";
-            this.seeInstruction.Size = new System.Drawing.Size(180, 22);
+            this.seeInstruction.Size = new System.Drawing.Size(131, 22);
             this.seeInstruction.Text = "Instruction";
             // 
             // seeAuthor
             // 
             this.seeAuthor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.seeAuthor.Name = "seeAuthor";
-            this.seeAuthor.Size = new System.Drawing.Size(180, 22);
+            this.seeAuthor.Size = new System.Drawing.Size(131, 22);
             this.seeAuthor.Text = "Author";
-            // 
-            // seeScores
-            // 
-            this.seeScores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.seeScores.Name = "seeScores";
-            this.seeScores.Size = new System.Drawing.Size(180, 22);
-            this.seeScores.Text = "See TOP 10 scores";
-            // 
-            // resetScores
-            // 
-            this.resetScores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.resetScores.Name = "resetScores";
-            this.resetScores.Size = new System.Drawing.Size(180, 22);
-            this.resetScores.Text = "Reset TOP 10 scores";
-            // 
-            // newGame
-            // 
-            this.newGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.newGame.Name = "newGame";
-            this.newGame.Size = new System.Drawing.Size(180, 22);
-            this.newGame.Text = "New game";
-            // 
-            // saveGame
-            // 
-            this.saveGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.saveGame.Name = "saveGame";
-            this.saveGame.Size = new System.Drawing.Size(180, 22);
-            this.saveGame.Text = "Save game";
-            // 
-            // loadGame
-            // 
-            this.loadGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.loadGame.Name = "loadGame";
-            this.loadGame.Size = new System.Drawing.Size(180, 22);
-            this.loadGame.Text = "Load game";
             // 
             // number1
             // 
             this.number1.AutoSize = true;
             this.number1.BackColor = System.Drawing.Color.Transparent;
             this.number1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.number1.ForeColor = System.Drawing.Color.White;
             this.number1.Location = new System.Drawing.Point(20, 156);
             this.number1.Name = "number1";
             this.number1.Size = new System.Drawing.Size(84, 25);
@@ -194,6 +195,7 @@
             // 
             // field1
             // 
+            this.field1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.field1.Location = new System.Drawing.Point(12, 117);
             this.field1.Name = "field1";
             this.field1.Size = new System.Drawing.Size(100, 100);
@@ -202,6 +204,7 @@
             // 
             // field2
             // 
+            this.field2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.field2.Location = new System.Drawing.Point(118, 117);
             this.field2.Name = "field2";
             this.field2.Size = new System.Drawing.Size(100, 100);
@@ -210,6 +213,7 @@
             // 
             // field3
             // 
+            this.field3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.field3.Location = new System.Drawing.Point(224, 117);
             this.field3.Name = "field3";
             this.field3.Size = new System.Drawing.Size(100, 100);
@@ -218,6 +222,7 @@
             // 
             // field4
             // 
+            this.field4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.field4.Location = new System.Drawing.Point(330, 117);
             this.field4.Name = "field4";
             this.field4.Size = new System.Drawing.Size(100, 100);
@@ -226,6 +231,7 @@
             // 
             // field5
             // 
+            this.field5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.field5.Location = new System.Drawing.Point(12, 223);
             this.field5.Name = "field5";
             this.field5.Size = new System.Drawing.Size(100, 100);
@@ -234,6 +240,7 @@
             // 
             // field9
             // 
+            this.field9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.field9.Location = new System.Drawing.Point(12, 329);
             this.field9.Name = "field9";
             this.field9.Size = new System.Drawing.Size(100, 100);
@@ -242,6 +249,7 @@
             // 
             // field6
             // 
+            this.field6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.field6.Location = new System.Drawing.Point(118, 223);
             this.field6.Name = "field6";
             this.field6.Size = new System.Drawing.Size(100, 100);
@@ -250,6 +258,7 @@
             // 
             // field7
             // 
+            this.field7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.field7.Location = new System.Drawing.Point(224, 223);
             this.field7.Name = "field7";
             this.field7.Size = new System.Drawing.Size(100, 100);
@@ -258,6 +267,7 @@
             // 
             // field8
             // 
+            this.field8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.field8.Location = new System.Drawing.Point(330, 223);
             this.field8.Name = "field8";
             this.field8.Size = new System.Drawing.Size(100, 100);
@@ -266,6 +276,7 @@
             // 
             // field14
             // 
+            this.field14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.field14.Location = new System.Drawing.Point(118, 435);
             this.field14.Name = "field14";
             this.field14.Size = new System.Drawing.Size(100, 100);
@@ -274,6 +285,7 @@
             // 
             // field13
             // 
+            this.field13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.field13.Location = new System.Drawing.Point(12, 435);
             this.field13.Name = "field13";
             this.field13.Size = new System.Drawing.Size(100, 100);
@@ -282,6 +294,7 @@
             // 
             // field12
             // 
+            this.field12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.field12.Location = new System.Drawing.Point(330, 329);
             this.field12.Name = "field12";
             this.field12.Size = new System.Drawing.Size(100, 100);
@@ -290,6 +303,7 @@
             // 
             // field11
             // 
+            this.field11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.field11.Location = new System.Drawing.Point(224, 329);
             this.field11.Name = "field11";
             this.field11.Size = new System.Drawing.Size(100, 100);
@@ -298,6 +312,7 @@
             // 
             // field10
             // 
+            this.field10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.field10.Location = new System.Drawing.Point(118, 329);
             this.field10.Name = "field10";
             this.field10.Size = new System.Drawing.Size(100, 100);
@@ -306,6 +321,7 @@
             // 
             // field15
             // 
+            this.field15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.field15.Location = new System.Drawing.Point(224, 435);
             this.field15.Name = "field15";
             this.field15.Size = new System.Drawing.Size(100, 100);
@@ -314,6 +330,7 @@
             // 
             // field16
             // 
+            this.field16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.field16.Location = new System.Drawing.Point(330, 435);
             this.field16.Name = "field16";
             this.field16.Size = new System.Drawing.Size(100, 100);
@@ -325,6 +342,7 @@
             this.number3.AutoSize = true;
             this.number3.BackColor = System.Drawing.Color.Transparent;
             this.number3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.number3.ForeColor = System.Drawing.Color.White;
             this.number3.Location = new System.Drawing.Point(232, 156);
             this.number3.Name = "number3";
             this.number3.Size = new System.Drawing.Size(84, 25);
@@ -336,6 +354,7 @@
             this.number2.AutoSize = true;
             this.number2.BackColor = System.Drawing.Color.Transparent;
             this.number2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.number2.ForeColor = System.Drawing.Color.White;
             this.number2.Location = new System.Drawing.Point(125, 156);
             this.number2.Name = "number2";
             this.number2.Size = new System.Drawing.Size(84, 25);
@@ -347,6 +366,7 @@
             this.number4.AutoSize = true;
             this.number4.BackColor = System.Drawing.Color.Transparent;
             this.number4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.number4.ForeColor = System.Drawing.Color.White;
             this.number4.Location = new System.Drawing.Point(339, 156);
             this.number4.Name = "number4";
             this.number4.Size = new System.Drawing.Size(84, 25);
@@ -358,6 +378,7 @@
             this.number5.AutoSize = true;
             this.number5.BackColor = System.Drawing.Color.Transparent;
             this.number5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.number5.ForeColor = System.Drawing.Color.White;
             this.number5.Location = new System.Drawing.Point(20, 261);
             this.number5.Name = "number5";
             this.number5.Size = new System.Drawing.Size(84, 25);
@@ -369,6 +390,7 @@
             this.number9.AutoSize = true;
             this.number9.BackColor = System.Drawing.Color.Transparent;
             this.number9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.number9.ForeColor = System.Drawing.Color.White;
             this.number9.Location = new System.Drawing.Point(20, 369);
             this.number9.Name = "number9";
             this.number9.Size = new System.Drawing.Size(84, 25);
@@ -380,6 +402,7 @@
             this.number13.AutoSize = true;
             this.number13.BackColor = System.Drawing.Color.Transparent;
             this.number13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.number13.ForeColor = System.Drawing.Color.White;
             this.number13.Location = new System.Drawing.Point(20, 474);
             this.number13.Name = "number13";
             this.number13.Size = new System.Drawing.Size(84, 25);
@@ -391,6 +414,7 @@
             this.number6.AutoSize = true;
             this.number6.BackColor = System.Drawing.Color.Transparent;
             this.number6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.number6.ForeColor = System.Drawing.Color.White;
             this.number6.Location = new System.Drawing.Point(125, 261);
             this.number6.Name = "number6";
             this.number6.Size = new System.Drawing.Size(84, 25);
@@ -402,6 +426,7 @@
             this.number7.AutoSize = true;
             this.number7.BackColor = System.Drawing.Color.Transparent;
             this.number7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.number7.ForeColor = System.Drawing.Color.White;
             this.number7.Location = new System.Drawing.Point(232, 261);
             this.number7.Name = "number7";
             this.number7.Size = new System.Drawing.Size(84, 25);
@@ -413,6 +438,7 @@
             this.number16.AutoSize = true;
             this.number16.BackColor = System.Drawing.Color.Transparent;
             this.number16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.number16.ForeColor = System.Drawing.Color.White;
             this.number16.Location = new System.Drawing.Point(339, 474);
             this.number16.Name = "number16";
             this.number16.Size = new System.Drawing.Size(84, 25);
@@ -424,6 +450,7 @@
             this.number12.AutoSize = true;
             this.number12.BackColor = System.Drawing.Color.Transparent;
             this.number12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.number12.ForeColor = System.Drawing.Color.White;
             this.number12.Location = new System.Drawing.Point(339, 369);
             this.number12.Name = "number12";
             this.number12.Size = new System.Drawing.Size(84, 25);
@@ -435,6 +462,7 @@
             this.number8.AutoSize = true;
             this.number8.BackColor = System.Drawing.Color.Transparent;
             this.number8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.number8.ForeColor = System.Drawing.Color.White;
             this.number8.Location = new System.Drawing.Point(339, 260);
             this.number8.Name = "number8";
             this.number8.Size = new System.Drawing.Size(84, 25);
@@ -446,6 +474,7 @@
             this.number14.AutoSize = true;
             this.number14.BackColor = System.Drawing.Color.Transparent;
             this.number14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.number14.ForeColor = System.Drawing.Color.White;
             this.number14.Location = new System.Drawing.Point(125, 474);
             this.number14.Name = "number14";
             this.number14.Size = new System.Drawing.Size(84, 25);
@@ -457,6 +486,7 @@
             this.number10.AutoSize = true;
             this.number10.BackColor = System.Drawing.Color.Transparent;
             this.number10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.number10.ForeColor = System.Drawing.Color.White;
             this.number10.Location = new System.Drawing.Point(125, 369);
             this.number10.Name = "number10";
             this.number10.Size = new System.Drawing.Size(84, 25);
@@ -468,6 +498,7 @@
             this.number15.AutoSize = true;
             this.number15.BackColor = System.Drawing.Color.Transparent;
             this.number15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.number15.ForeColor = System.Drawing.Color.White;
             this.number15.Location = new System.Drawing.Point(232, 474);
             this.number15.Name = "number15";
             this.number15.Size = new System.Drawing.Size(84, 25);
@@ -479,6 +510,7 @@
             this.number11.AutoSize = true;
             this.number11.BackColor = System.Drawing.Color.Transparent;
             this.number11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.number11.ForeColor = System.Drawing.Color.White;
             this.number11.Location = new System.Drawing.Point(232, 369);
             this.number11.Name = "number11";
             this.number11.Size = new System.Drawing.Size(84, 25);
@@ -496,7 +528,7 @@
             this.pointsLabel.TabIndex = 33;
             this.pointsLabel.Text = "0";
             // 
-            // Form1
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -538,8 +570,9 @@
             this.Controls.Add(this.field1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menu;
-            this.Name = "Form1";
+            this.Name = "MainWindow";
             this.Text = "2048";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainWindow_KeyDown);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.field1)).EndInit();

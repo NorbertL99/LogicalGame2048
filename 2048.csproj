@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\AppFieldsColorManagament.cs" />
     <Compile Include="Classes\AppFieldsManagament.cs" />
     <Compile Include="Classes\AppFileManagament.cs" />
     <Compile Include="Classes\AppInformationsManagament.cs" />
