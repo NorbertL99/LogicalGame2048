@@ -8,5 +8,9 @@ namespace _2048.Classes
 {
     class AppFileManagament
     {
+        public AppFileManagament()
+        {
+
+        }
     }
 }
