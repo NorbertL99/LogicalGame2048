@@ -26,7 +26,7 @@ Visual Studio 2017 Community
 /////////////////////////////////////////////
 //////////////////Version////////////////////
 /////////////////////////////////////////////
-
+Version is 0.1. GUI completed.
 Version is 0.2. GUI updates, fields random 
 number insert in random place update, score 
 managament work properly. Core of moving table
