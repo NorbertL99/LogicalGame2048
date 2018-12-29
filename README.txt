@@ -52,7 +52,10 @@ handle need to be added.
 
 This version 0.6. Save game added. Load game added.
 best scores save and update added. Errors handle need
-to be added. Updates will be given soon.
+to be added. 
+
+This version 0.7. Simple errors handle added.
+Game is completed.
 
 /////////////////////////////////////////////
 ////////////////How to applay////////////////

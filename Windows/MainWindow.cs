@@ -118,75 +118,147 @@ namespace _2048
         #region Buttons click reaction
         private void newGame_Click(object sender, EventArgs e)                                      // This method run when newGame_Click
         {
-            if(MessageBox.Show("Are you sure you want to start new game ?",                         // Asking user about he is sure of restart game
-                "New game", MessageBoxButtons.YesNo) == DialogResult.Yes)                           // If result of answer is yes
+            try
             {
-                startNewGame();                                                                     // Run startNewGaem method
+                if (MessageBox.Show("Are you sure you want to start new game ?",                    // Asking user about he is sure of restart game
+                "New game", MessageBoxButtons.YesNo) == DialogResult.Yes)                           // If result of answer is yes
+                {
+                    startNewGame();                                                                 // Run startNewGaem method
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong ! Try again", "Error",                        // Inform user about some error
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);                                    // Set buttons and icon for messagebox
             }
         }
         private void saveGame_Click(object sender, EventArgs e)                                     // This method run when saveGame_Click
         {
-            if (MessageBox.Show("Are you sure you want to save game ? \n" +                         // Asking user about he is sure of saveing games
-                "It will delete your previous save !",                                              // Inform user about what will happend
-                "Save game", MessageBoxButtons.YesNo) == DialogResult.Yes)                          // If result of answer is yes
+            try
             {
-                fileManagament.makeSave(fieldsManagament.getGameBoard());                           // Run make save method
-                MessageBox.Show("Game saved properly !", "Save",                                    // Inform user abot properly operation
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);                              // Set buttons and icon of message box
+                if (MessageBox.Show("Are you sure you want to save game ? \n" +                     // Asking user about he is sure of saveing games
+    "It will delete your previous save !",                                                          // Inform user about what will happend
+    "Save game", MessageBoxButtons.YesNo) == DialogResult.Yes)                                      // If result of answer is yes
+                {
+                    fileManagament.makeSave(fieldsManagament.getGameBoard());                       // Run make save method
+                    MessageBox.Show("Game saved properly !", "Save",                                // Inform user abot properly operation
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);                          // Set buttons and icon of message box
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong ! Try again", "Error",                        // Inform user about some error
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);                                    // Set buttons and icon for messagebox
             }
         }
         private void loadGame_Click(object sender, EventArgs e)                                     // This method run when loadGame_Click
         {
-            if (MessageBox.Show("Are you sure you want to load game ? \n" +                         // Asking user about he is sure of saveing games
-                "It will restart your current game !",                                              // Inform user about what will happend
-                "Load game", MessageBoxButtons.YesNo) == DialogResult.Yes)                          // If result of answer is yes
+            try
             {
-                fieldsManagament.setFieldsTableValue(fileManagament.loadSave());                    // Run setFieldsTableValue method from fieldsManagament as value send table returned from loadSave method
-                refreshLabels();                                                                    // Run refresh labels method
-                MessageBox.Show("Game loaded properly !", "Save",                                   // Inform user abot properly operation
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);                              // Set buttons and icon of message box
+                if (MessageBox.Show("Are you sure you want to load game ? \n" +                     // Asking user about he is sure of saveing games
+    "It will restart your current game !",                                                          // Inform user about what will happend
+    "Load game", MessageBoxButtons.YesNo) == DialogResult.Yes)                                      // If result of answer is yes
+                {
+                    fieldsManagament.setFieldsTableValue(fileManagament.loadSave());                // Run setFieldsTableValue method from fieldsManagament as value send table returned from loadSave method
+                    refreshLabels();                                                                // Run refresh labels method
+                    MessageBox.Show("Game loaded properly !", "Save",                               // Inform user abot properly operation
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);                          // Set buttons and icon of message box
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong ! Try again", "Error",                        // Inform user about some error
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);                                    // Set buttons and icon for messagebox
             }
         }
         private void seeScores_Click(object sender, EventArgs e)                                    // This method run when seeScores_Click
         {
-            MessageBox.Show(fileManagament.getScores(), "TOP 10 Scores",                            // Show user top 10 scores 
+            try
+            {
+                MessageBox.Show(fileManagament.getScores(), "TOP 10 Scores",                        // Show user top 10 scores 
                 MessageBoxButtons.OK, MessageBoxIcon.Information);                                  // Set buttons and icon of message box
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong ! Try again", "Error",                        // Inform user about some error
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);                                    // Set buttons and icon for messagebox
+            }            
         }
         private void resetScores_Click(object sender, EventArgs e)                                  // This method run when resetScores_Click
         {
-            if (MessageBox.Show("Are you sure you want to reset your scores ? \n" +                 // Asking user about he is sure of saveing games
-                "It remove all scores that were ever saved !",                                      // Inform user about what will happend
-                "Reset scores", MessageBoxButtons.YesNo) == DialogResult.Yes)                       // If result of answer is yes
+            try
             {
-                fileManagament.resetScore();                                                        // Run reset scores method
-                MessageBox.Show("TOP 10 Scores removed properly !", "Save",                         // Inform user abot properly operation
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);                              // Set buttons and icon of message box
+                if (MessageBox.Show("Are you sure you want to reset your scores ? \n" +             // Asking user about he is sure of saveing games
+    "It remove all scores that were ever saved !",                                                  // Inform user about what will happend
+    "Reset scores", MessageBoxButtons.YesNo) == DialogResult.Yes)                                   // If result of answer is yes
+                {
+                    fileManagament.resetScore();                                                    // Run reset scores method
+                    MessageBox.Show("TOP 10 Scores removed properly !", "Save",                     // Inform user abot properly operation
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);                          // Set buttons and icon of message box
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong ! Try again", "Error",                        // Inform user about some error
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);                                    // Set buttons and icon for messagebox
             }
         }
         private void seeInstruction_Click(object sender, EventArgs e)                               // This method run when seeInstruction_Click
         {
-            MessageBox.Show(informationsManagament.gameInstruction(), "Instruction",                // Give user game instruction
+            try
+            {
+                MessageBox.Show(informationsManagament.gameInstruction(), "Instruction",            // Give user game instruction
                 MessageBoxButtons.OK, MessageBoxIcon.Information);                                  // Set buttons and icon for message box
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong ! Try again", "Error",                        // Inform user about some error
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);                                    // Set buttons and icon for messagebox
+            }
         }
         private void seeAuthor_Click(object sender, EventArgs e)                                    // This method run when seeAuthor_Click
         {
-            MessageBox.Show(informationsManagament.authorInformation(), "About author",             // Give information of author for user
-                MessageBoxButtons.OK, MessageBoxIcon.Information);                                  // Set buttons and icon for message box
+            try
+            {
+                MessageBox.Show(informationsManagament.authorInformation(), "About author",         // Give information of author for user
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);                              // Set buttons and icon for message box
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong ! Try again", "Error",                        // Inform user about some error
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);                                    // Set buttons and icon for messagebox
+            }
         }
         private void undoMove_Click(object sender, EventArgs e)                                     // This method run when undoMove_Click
         {
-            fieldsManagament.undoMove();                                                            // Run undoMove method from fieldsManagament
-            refreshLabels();                                                                        // Run refreshLabels methods
+            try                                                                                     // Handle errors while doing
+            {
+                fieldsManagament.undoMove();                                                        // Run undoMove method from fieldsManagament
+                refreshLabels();                                                                    // Run refreshLabels methods
+            }
+            catch(Exception)                                                                        // If some errors found
+            {
+                MessageBox.Show("Before you undo your move you have to do it !", "Error",           // Inform user
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);                                    // Set buttons and icon for messagebox
+            }
         }
         private void clearSave_Click(object sender, EventArgs e)                                    // This method run when clearSave_Click
         {
-            if (MessageBox.Show("Are you sure you want to reset your save ? \n" +                   // Asking user about he is sure of reset save
-                 "It remove whole save !",                                                          // Inform user about what will happend
-                 "Reset save", MessageBoxButtons.YesNo) == DialogResult.Yes)                        // If result of answer is yes
+            try                                                                                     // Handle errors while doing
             {
-                fileManagament.clearSave();                                                         // Run clear save method
-                MessageBox.Show("Save removed properly !", "Save",                                  // Inform user abot properly operation
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);                              // Set buttons and icon of message box
+                if (MessageBox.Show("Are you sure you want to reset your save ? \n" +               // Asking user about he is sure of reset save
+                        "It remove whole save !",                                                   // Inform user about what will happend
+                        "Reset save", MessageBoxButtons.YesNo) == DialogResult.Yes)                 // If result of answer is yes
+                {
+                    fileManagament.clearSave();                                                     // Run clear save method
+                    MessageBox.Show("Save removed properly !", "Save",                              // Inform user abot properly operation
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);                          // Set buttons and icon of message box
+                }
+            }
+            catch (Exception)                                                                       // If some errors found
+            {
+                MessageBox.Show("Something went wrong ! Try again", "Error",                        // Inform user about some error
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);                                    // Set buttons and icon for messagebox
             }
         }
         #endregion
