@@ -30,7 +30,6 @@ namespace _2048
             fieldsManagament.initializeMap();                                                       // Initialize map
             refreshLabels();                                                                        // Refreshing labels
         }
-
         private void MainWindow_KeyDown(object sender, KeyEventArgs e)                              // This method run when some button on keyboard clicked
         {
             switch(e.KeyCode)                                                                       // Switch on e.KeyCode
@@ -58,6 +57,8 @@ namespace _2048
                 "Your score: " + scoresManagament.returnScores(),                                   // Inform about scores
                 "You lost",                                                                         // Title
                 MessageBoxButtons.OK, MessageBoxIcon.Information);                                  // Set buttons and icon for message box
+                fileManagament.saveTopTen(scoresManagament.sortArray(fileManagament.getTopTen(),    // Runing sameTopTen method as table to with records send table
+                    scoresManagament.returnScores()));                                              // Returned by sortArrayMethod with given parameters current top 10 scores and current score
                 startNewGame();                                                                     // Run startNewGame method
             }
         }
@@ -114,7 +115,6 @@ namespace _2048
             number15.BackColor = field15.BackColor;                                                 // Label back color same as field color
             number16.BackColor = field16.BackColor;                                                 // Label back color same as field color
         }
-
         #region Buttons click reaction
         private void newGame_Click(object sender, EventArgs e)                                      // This method run when newGame_Click
         {
@@ -130,7 +130,7 @@ namespace _2048
                 "It will delete your previous save !",                                              // Inform user about what will happend
                 "Save game", MessageBoxButtons.YesNo) == DialogResult.Yes)                          // If result of answer is yes
             {
-                fileManagament.makeSave();                                                          // Run make save method
+                fileManagament.makeSave(fieldsManagament.getGameBoard());                           // Run make save method
                 MessageBox.Show("Game saved properly !", "Save",                                    // Inform user abot properly operation
                     MessageBoxButtons.OK, MessageBoxIcon.Information);                              // Set buttons and icon of message box
             }
@@ -141,7 +141,8 @@ namespace _2048
                 "It will restart your current game !",                                              // Inform user about what will happend
                 "Load game", MessageBoxButtons.YesNo) == DialogResult.Yes)                          // If result of answer is yes
             {
-                fileManagament.loadSave();                                                          // Run load save method
+                fieldsManagament.setFieldsTableValue(fileManagament.loadSave());                    // Run setFieldsTableValue method from fieldsManagament as value send table returned from loadSave method
+                refreshLabels();                                                                    // Run refresh labels method
                 MessageBox.Show("Game loaded properly !", "Save",                                   // Inform user abot properly operation
                     MessageBoxButtons.OK, MessageBoxIcon.Information);                              // Set buttons and icon of message box
             }
@@ -176,6 +177,17 @@ namespace _2048
         {
             fieldsManagament.undoMove();                                                            // Run undoMove method from fieldsManagament
             refreshLabels();                                                                        // Run refreshLabels methods
+        }
+        private void clearSave_Click(object sender, EventArgs e)                                    // This method run when clearSave_Click
+        {
+            if (MessageBox.Show("Are you sure you want to reset your save ? \n" +                   // Asking user about he is sure of reset save
+                 "It remove whole save !",                                                          // Inform user about what will happend
+                 "Reset save", MessageBoxButtons.YesNo) == DialogResult.Yes)                        // If result of answer is yes
+            {
+                fileManagament.clearSave();                                                         // Run clear save method
+                MessageBox.Show("Save removed properly !", "Save",                                  // Inform user abot properly operation
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);                              // Set buttons and icon of message box
+            }
         }
         #endregion
         private void startNewGame()                                                                 // This method is used to start new game

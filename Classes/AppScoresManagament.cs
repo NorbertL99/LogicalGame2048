@@ -13,6 +13,7 @@ namespace _2048.Classes
 {
     class AppScoresManagament
     {
+        int[] topScores = new int[11];
         static int score = 0;                                           // This variable store scores
         public AppScoresManagament()                                    // Constructor, empty
         {
@@ -33,6 +34,16 @@ namespace _2048.Classes
         public void setScoresWithValue(int value)                       // This method is used to set scores with specific value
         {
             score = value;                                              // Set score value as value
+        }
+        public int[] sortArray(int[] array, int score)                  // This method is used to sort array of current best scores and new score
+        {
+            for(int i = 0; i < 10; i++)                                 // This loop doing 10 times
+            {
+                topScores[i] = array[i];                                // Seting topScore i with array i value
+            }
+            topScores[10] = score;                                      // As last index set a score value
+            Array.Sort(topScores);                                      // Sort topScores array
+            return topScores;                                           // Return topScores array
         }
     }
 }

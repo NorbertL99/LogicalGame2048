@@ -48,7 +48,11 @@ See TOP 10 scores added. Reset TOP 10 scores added.
 See author info added. See instruction added.
 Core of game work properly. Save game, load game
 and update best scores need to be updated. Erros
-handle need to be added. Updates will be given soon.
+handle need to be added. 
+
+This version 0.6. Save game added. Load game added.
+best scores save and update added. Errors handle need
+to be added. Updates will be given soon.
 
 /////////////////////////////////////////////
 ////////////////How to applay////////////////
@@ -64,6 +68,6 @@ For more information about code read comments
 in source file of main window or load project 
 into Visual Studio and open window code
 
-Last updated 2018-12-29 04:10
+Last updated 2018-12-29 08:26
 
 

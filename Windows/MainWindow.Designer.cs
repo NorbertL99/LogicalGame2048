@@ -74,6 +74,7 @@
             this.pointsLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.undoMove = new System.Windows.Forms.Label();
+            this.clearSave = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.field1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.field2)).BeginInit();
@@ -112,7 +113,8 @@
             this.gameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newGame,
             this.saveGame,
-            this.loadGame});
+            this.loadGame,
+            this.clearSave});
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
             this.gameToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.gameToolStripMenuItem.Text = "Game";
@@ -121,7 +123,7 @@
             // 
             this.newGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.newGame.Name = "newGame";
-            this.newGame.Size = new System.Drawing.Size(133, 22);
+            this.newGame.Size = new System.Drawing.Size(180, 22);
             this.newGame.Text = "New game";
             this.newGame.Click += new System.EventHandler(this.newGame_Click);
             // 
@@ -129,7 +131,7 @@
             // 
             this.saveGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.saveGame.Name = "saveGame";
-            this.saveGame.Size = new System.Drawing.Size(133, 22);
+            this.saveGame.Size = new System.Drawing.Size(180, 22);
             this.saveGame.Text = "Save game";
             this.saveGame.Click += new System.EventHandler(this.saveGame_Click);
             // 
@@ -137,7 +139,7 @@
             // 
             this.loadGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.loadGame.Name = "loadGame";
-            this.loadGame.Size = new System.Drawing.Size(133, 22);
+            this.loadGame.Size = new System.Drawing.Size(180, 22);
             this.loadGame.Text = "Load game";
             this.loadGame.Click += new System.EventHandler(this.loadGame_Click);
             // 
@@ -560,6 +562,14 @@
             this.undoMove.Text = "Undo move";
             this.undoMove.Click += new System.EventHandler(this.undoMove_Click);
             // 
+            // clearSave
+            // 
+            this.clearSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.clearSave.Name = "clearSave";
+            this.clearSave.Size = new System.Drawing.Size(180, 22);
+            this.clearSave.Text = "Clear game save";
+            this.clearSave.Click += new System.EventHandler(this.clearSave_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -679,6 +689,7 @@
         private System.Windows.Forms.Label pointsLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label undoMove;
+        private System.Windows.Forms.ToolStripMenuItem clearSave;
     }
 }
 
