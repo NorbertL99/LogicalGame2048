@@ -21,6 +21,8 @@ namespace _2048
         AppFieldsManagament fieldsManagament = new AppFieldsManagament();                           // Create new object of AppFieldsManagament
         AppFieldsColorManagament colorManagament = new AppFieldsColorManagament();                  // Create new object of AppFieldsColorManagament
         AppScoresManagament scoresManagament = new AppScoresManagament();                           // Create new object of AppScoresManagament
+        AppInformationsManagament informationsManagament = new AppInformationsManagament();         // Create new object of AppInformationsManagament
+        AppFileManagament fileManagament = new AppFileManagament();                                 // Create new object of AppFileManagament
 
         public MainWindow()                                                                         // This method run when window open
         {
@@ -49,6 +51,14 @@ namespace _2048
                     fieldsManagament.moveFieldsLeft();                                              // Run moveFieldsLeft method from AppFieldsManagament class
                     refreshLabels();                                                                // Run refresh labels method
                     break;
+            }
+            if(fieldsManagament.checkForPossibleMove() == 0)                                        // If there is no more possible move
+            {
+                MessageBox.Show("You lost, there is no more possible move ! \n" +                   // Inform user about lose
+                "Your score: " + scoresManagament.returnScores(),                                   // Inform about scores
+                "You lost",                                                                         // Title
+                MessageBoxButtons.OK, MessageBoxIcon.Information);                                  // Set buttons and icon for message box
+                startNewGame();                                                                     // Run startNewGame method
             }
         }
         private void refreshLabels()                                                                // This method is used to refresh labels
@@ -103,6 +113,77 @@ namespace _2048
             number14.BackColor = field14.BackColor;                                                 // Label back color same as field color
             number15.BackColor = field15.BackColor;                                                 // Label back color same as field color
             number16.BackColor = field16.BackColor;                                                 // Label back color same as field color
+        }
+
+        #region Buttons click reaction
+        private void newGame_Click(object sender, EventArgs e)                                      // This method run when newGame_Click
+        {
+            if(MessageBox.Show("Are you sure you want to start new game ?",                         // Asking user about he is sure of restart game
+                "New game", MessageBoxButtons.YesNo) == DialogResult.Yes)                           // If result of answer is yes
+            {
+                startNewGame();                                                                     // Run startNewGaem method
+            }
+        }
+        private void saveGame_Click(object sender, EventArgs e)                                     // This method run when saveGame_Click
+        {
+            if (MessageBox.Show("Are you sure you want to save game ? \n" +                         // Asking user about he is sure of saveing games
+                "It will delete your previous save !",                                              // Inform user about what will happend
+                "Save game", MessageBoxButtons.YesNo) == DialogResult.Yes)                          // If result of answer is yes
+            {
+                fileManagament.makeSave();                                                          // Run make save method
+                MessageBox.Show("Game saved properly !", "Save",                                    // Inform user abot properly operation
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);                              // Set buttons and icon of message box
+            }
+        }
+        private void loadGame_Click(object sender, EventArgs e)                                     // This method run when loadGame_Click
+        {
+            if (MessageBox.Show("Are you sure you want to load game ? \n" +                         // Asking user about he is sure of saveing games
+                "It will restart your current game !",                                              // Inform user about what will happend
+                "Load game", MessageBoxButtons.YesNo) == DialogResult.Yes)                          // If result of answer is yes
+            {
+                fileManagament.loadSave();                                                          // Run load save method
+                MessageBox.Show("Game loaded properly !", "Save",                                   // Inform user abot properly operation
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);                              // Set buttons and icon of message box
+            }
+        }
+        private void seeScores_Click(object sender, EventArgs e)                                    // This method run when seeScores_Click
+        {
+            MessageBox.Show(fileManagament.getScores(), "TOP 10 Scores",                            // Show user top 10 scores 
+                MessageBoxButtons.OK, MessageBoxIcon.Information);                                  // Set buttons and icon of message box
+        }
+        private void resetScores_Click(object sender, EventArgs e)                                  // This method run when resetScores_Click
+        {
+            if (MessageBox.Show("Are you sure you want to reset your scores ? \n" +                 // Asking user about he is sure of saveing games
+                "It remove all scores that were ever saved !",                                      // Inform user about what will happend
+                "Reset scores", MessageBoxButtons.YesNo) == DialogResult.Yes)                       // If result of answer is yes
+            {
+                fileManagament.resetScore();                                                        // Run reset scores method
+                MessageBox.Show("TOP 10 Scores removed properly !", "Save",                         // Inform user abot properly operation
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);                              // Set buttons and icon of message box
+            }
+        }
+        private void seeInstruction_Click(object sender, EventArgs e)                               // This method run when seeInstruction_Click
+        {
+            MessageBox.Show(informationsManagament.gameInstruction(), "Instruction",                // Give user game instruction
+                MessageBoxButtons.OK, MessageBoxIcon.Information);                                  // Set buttons and icon for message box
+        }
+        private void seeAuthor_Click(object sender, EventArgs e)                                    // This method run when seeAuthor_Click
+        {
+            MessageBox.Show(informationsManagament.authorInformation(), "About author",             // Give information of author for user
+                MessageBoxButtons.OK, MessageBoxIcon.Information);                                  // Set buttons and icon for message box
+        }
+        private void undoMove_Click(object sender, EventArgs e)                                     // This method run when undoMove_Click
+        {
+            fieldsManagament.undoMove();                                                            // Run undoMove method from fieldsManagament
+            refreshLabels();                                                                        // Run refreshLabels methods
+        }
+        #endregion
+        private void startNewGame()                                                                 // This method is used to start new game
+        {
+            fieldsManagament.resetFields();                                                         // Run resetFields method 
+            scoresManagament.resetScores();                                                         // Run resetScores method
+            fieldsManagament.initializeMap();                                                       // Run initializeMap method
+            refreshLabels();                                                                        // Run refresh board method
         }
     }
 }

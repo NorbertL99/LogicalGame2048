@@ -14,17 +14,31 @@ namespace _2048.Classes
 {
     class AppFieldsManagament
     {
+        #region Variables and objects
         int[,] fieldsTable = new int[4, 4];                                                         // This table store game board
         int[,] fieldsTableCopy;                                                                     // This variable store copy of fieldsTable created before move
         List<int> emptyFields = new List<int>();                                                    // This list store empty fields on game board
         AppScoresManagament scoresManagament = new AppScoresManagament();                           // Create new object of AppScoresManagament
-
-        public AppFieldsManagament()                                                                // Constructor, empty
-        {
-
-        }
-
+        #endregion
         #region Core
+        #region Moveing fields
+        /* Algorithm info
+         * -------------------------------------------------------
+         * Algorith of it checking every possible combination
+         * If combination is correct doing specific instruction
+         * For moveFieldsDown checking every possible combintation
+         * from down to up. For moveFieldsUp checking every
+         * possible combination from up to down. For moveFieldsLeft
+         * checking every possible combination from left to right.
+         * For moveFieldsRight checking every possible combination
+         * from right to left.
+         * 
+         * Possible combiantions in good orded 
+         * -------------------------------------------------------
+         * First is same like secound. Secound same like third.
+         * Third same like last. First is 0. Secound is 0. Third
+         * is 0. Everything else waht should be done is in code.
+        */
         public void moveFieldsDown()                                                                // This method is used to move fields down
         {
             fieldsTableCopy = (int[,])fieldsTable.Clone();                                          // Create copy of fieldsTable         
@@ -291,8 +305,94 @@ namespace _2048.Classes
         }
         public void moveFieldsLeft()                                                                // This method is used to move fields left
         {
-            // TODO move table properly
+            // TODO REPEAR IT
+            fieldsTableCopy = (int[,])fieldsTable.Clone();                                          // Create copy of fieldsTable 
+            for (int i = 0; i < 4; i++)                                                             // This loop doing every think inside 4 times
+            {
+                if (fieldsTable[i, 0] == fieldsTable[i, 1])                                         // If i,0 = i,1 then
+                {
+                    fieldsTable[i, 0] = fieldsTable[i, 0] + fieldsTable[i, 1];                      // i,0 = i,0 + i,1
+                    scoresManagament.addScores(fieldsTable[i, 0]);                                  // Adding value to scores
+                    fieldsTable[i, 1] = 0;                                                          // i,1 = 0
+                }
+                if (fieldsTable[i, 1] == fieldsTable[i, 2])                                         // If i,1 = i,2
+                {
+                    fieldsTable[i, 1] = fieldsTable[i, 1] + fieldsTable[i, 2];                      // i,1 = i,1 + i,2
+                    scoresManagament.addScores(fieldsTable[i, 1]);                                  // Adding value to scores
+                    fieldsTable[i, 2] = 0;                                                          // i,2 = 0
+                }
+                if (fieldsTable[i, 2] == fieldsTable[i, 3])                                         // If i,2 = i,3
+                {
+                    fieldsTable[i, 2] = fieldsTable[i, 2] + fieldsTable[i, 3];                      // i,2 = i,2 + i,3
+                    scoresManagament.addScores(fieldsTable[i, 2]);                                  // Adding value to scores
+                    fieldsTable[i, 3] = 0;                                                          // i,3 = 0
+                }
+                if (fieldsTable[i, 0] == 0)                                                         // If i,0 = 0 then
+                {
+                    if (fieldsTable[i, 1] == 0 && fieldsTable[i, 2] == 0)                           // If i,1 = 0 and i,2 = 0 then
+                    {
+                        fieldsTable[i, 0] = fieldsTable[i, 3];                                      // i,0 = i,3
+                        fieldsTable[i, 3] = 0;                                                      // i,3 = 0
+                    }
+                    else if (fieldsTable[i, 1] == 0)                                                // Else if i,1 = 0 then
+                    {
+                        fieldsTable[i, 0] = fieldsTable[i, 2];                                      // i,0 = i,2
+                        fieldsTable[i, 1] = fieldsTable[i, 3];                                      // i,1 = i,3
+                        fieldsTable[i, 2] = 0;                                                      // i,2 = 0
+                        fieldsTable[i, 3] = 0;                                                      // i,3 = 0
+                    }
+                    else                                                                            // Else
+                    {
+                        fieldsTable[i, 0] = fieldsTable[i, 1];                                      // i,0 = i,1
+                        fieldsTable[i, 1] = fieldsTable[i, 2];                                      // i,1 = i,2
+                        fieldsTable[i, 2] = fieldsTable[i, 3];                                      // i,2 = i,3    
+                        fieldsTable[i, 3] = 0;                                                      // i,3 = 0
+                    }
+                }
+                if (fieldsTable[i, 1] == 0)                                                         // If i,1 = 0 then
+                {
+                    if (fieldsTable[i, 0] == fieldsTable[i, 2])                                     // If i,0 = i,2 then
+                    {
+                        fieldsTable[i, 0] = fieldsTable[i, 0] + fieldsTable[i, 2];                  // i,0 = i,0 + i,2
+                        scoresManagament.addScores(fieldsTable[i, 0]);                              // Adding value to scores
+                        fieldsTable[i, 2] = 0;                                                      // i,2 = 0
+                    }
+                    else if (fieldsTable[i, 2] == 0 && fieldsTable[i, 0] == fieldsTable[i, 3])      // Else if i,2 = 0 and i,0 = i,3 then
+                    {
+                        fieldsTable[i, 0] = fieldsTable[i, 0] + fieldsTable[i, 3];                  // i,0 = i,0 + i,3
+                        scoresManagament.addScores(fieldsTable[i, 0]);                              // Adding value to scores
+                        fieldsTable[i, 3] = 0;                                                      // i,3 = 0
+                    }
+                    else if (fieldsTable[i, 2] == 0)                                                // Else if i,2 = 0 then
+                    {
+                        fieldsTable[i, 1] = fieldsTable[i, 3];                                      // i,1 = i,3
+                        fieldsTable[i, 3] = 0;                                                      // i,3 = 0
+                    }
+                    else                                                                            // Else
+                    {
+                        fieldsTable[i, 1] = fieldsTable[i, 2];                                      // i,1 = i,2
+                        fieldsTable[i, 2] = fieldsTable[i, 3];                                      // i,2 = i,3
+                        fieldsTable[i, 3] = 0;                                                      // i,3 = 0
+                    }
+                }
+                if (fieldsTable[i, 2] == 0)                                                         // If i,2 = 0 then
+                {
+                    if (fieldsTable[i, 1] == fieldsTable[i, 3])                                     // If i,1 = i,3 then
+                    {
+                        fieldsTable[i, 1] = fieldsTable[i, 1] + fieldsTable[i, 3];                  // i,1 = i,1 + i,3
+                        scoresManagament.addScores(fieldsTable[i, 1]);                              // Adding value to scores
+                        fieldsTable[i, 3] = 0;                                                      // i,3 = 0
+                    }
+                    else                                                                            // Else
+                    {
+                        fieldsTable[i, 2] = fieldsTable[i, 3];                                      // i,2 = i,3
+                        fieldsTable[i, 3] = 0;                                                      // i,3 = 0
+                    }
+                }
+            }
+            compareGameBoard();                                                                     // Run compareGameBoard methid
         }
+        #endregion
         private void setRandom()                                                                    // This method is used to get random value
         {
             Random random = new Random();                                                           // Create new object of Random class
@@ -361,6 +461,10 @@ namespace _2048.Classes
             }
         }
         #endregion
+        public AppFieldsManagament()                                                                // Constructor, empty
+        {
+
+        }
         public int[,] getGameBoard()                                                                // This method is used to return fieldsTable
         {
             return fieldsTable;                                                                     // Return fieldsTable
@@ -368,6 +472,50 @@ namespace _2048.Classes
         public void initializeMap()                                                                 // This method is used to initialize map in main window
         {
             setRandom();                                                                            // Run setRandom method
+        }
+        public void undoMove()                                                                      // This method is used to undo last move
+        {
+            fieldsTable = fieldsTableCopy;                                                          // Seting fieldsTable with fieldsTableCopy
+        }
+        public void resetFields()                                                                   // This method is used to reset fields
+        {
+            for (int i = 0; i < 4; i++)                                                             // This loop doing 4 times for every column in tables
+            {
+                for(int j = 0; j < 4; j++)                                                          // This loop doing 4 times for every line in tables
+                {
+                    fieldsTable[i, j] = 0;                                                          // Set value in fieldsTable i,j as 0
+                    fieldsTableCopy[i, j] = 0;                                                      // Set value in fieldsTableCopy i,j as 0
+                }
+            }
+        }
+        public void setFieldsTableValue(int[,] value)                                               // This method is used to set fields table with specific value
+        {
+            fieldsTable = value;                                                                    // Set fieldsTable as value
+        }
+        public int checkForPossibleMove()                                                           // This method check that user had any possible move
+        {
+            for (int i = 0; i < 4; i++)                                                             // This loop doing for every column
+            {
+                for (int j = 0; j < 4; j++)                                                         // This loop doing for every line
+                {
+                    if (fieldsTable[i, j] == 0) return 1;                                           // If fieldsTable i,j = 0, return 1
+                }
+            }
+            for (int i = 0; i < 3; i++)                                                             // This loop doing for every column - 1
+            {
+                for(int j = 0; j < 3; j++)                                                          // This loop doing for every line - 1
+                {
+                    if (fieldsTable[i, j + 1] == fieldsTable[i, j] ||                               // If condition is true
+                       fieldsTable[i + 1, j] == fieldsTable[i, j]) return 1;                        // Returne 1
+                }
+            }
+            if (fieldsTable[3, 0] == fieldsTable[3, 1] ||                                           // If condition is true
+               fieldsTable[3, 1] == fieldsTable[3, 2] ||                                            // If condition is true
+               fieldsTable[3, 2] == fieldsTable[3, 3] ||                                            // If condition is true
+               fieldsTable[0, 3] == fieldsTable[1, 3] ||                                            // If condition is true
+               fieldsTable[1, 3] == fieldsTable[2, 3] ||                                            // If condition is true
+               fieldsTable[2, 3] == fieldsTable[3, 3]) return 1;                                    // If condition is true, return 1
+            return 0;                                                                               // If there is no condition with true, return 0
         }
     }
 }

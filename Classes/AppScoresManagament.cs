@@ -20,11 +20,19 @@ namespace _2048.Classes
         }
         public int returnScores()                                       // This method is used to return scores
         {
-            return score;
+            return score;                                               // Returning score
         }
         public void addScores(int value)                                // This method is used to add scores to scores
         {
-            score = score + value;
+            score = score + value;                                      // Score = score + value
+        }
+        public void resetScores()                                       // This method is used to reset scores
+        {
+            score = 0;                                                  // Set value of score as 0
+        }
+        public void setScoresWithValue(int value)                       // This method is used to set scores with specific value
+        {
+            score = value;                                              // Set score value as value
         }
     }
 }

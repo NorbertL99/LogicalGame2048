@@ -72,6 +72,8 @@
             this.number15 = new System.Windows.Forms.Label();
             this.number11 = new System.Windows.Forms.Label();
             this.pointsLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.undoMove = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.field1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.field2)).BeginInit();
@@ -89,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.field10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.field15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.field16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menu
@@ -120,6 +123,7 @@
             this.newGame.Name = "newGame";
             this.newGame.Size = new System.Drawing.Size(133, 22);
             this.newGame.Text = "New game";
+            this.newGame.Click += new System.EventHandler(this.newGame_Click);
             // 
             // saveGame
             // 
@@ -127,6 +131,7 @@
             this.saveGame.Name = "saveGame";
             this.saveGame.Size = new System.Drawing.Size(133, 22);
             this.saveGame.Text = "Save game";
+            this.saveGame.Click += new System.EventHandler(this.saveGame_Click);
             // 
             // loadGame
             // 
@@ -134,6 +139,7 @@
             this.loadGame.Name = "loadGame";
             this.loadGame.Size = new System.Drawing.Size(133, 22);
             this.loadGame.Text = "Load game";
+            this.loadGame.Click += new System.EventHandler(this.loadGame_Click);
             // 
             // scoreToolStripMenuItem
             // 
@@ -150,6 +156,7 @@
             this.seeScores.Name = "seeScores";
             this.seeScores.Size = new System.Drawing.Size(179, 22);
             this.seeScores.Text = "See TOP 10 scores";
+            this.seeScores.Click += new System.EventHandler(this.seeScores_Click);
             // 
             // resetScores
             // 
@@ -157,6 +164,7 @@
             this.resetScores.Name = "resetScores";
             this.resetScores.Size = new System.Drawing.Size(179, 22);
             this.resetScores.Text = "Reset TOP 10 scores";
+            this.resetScores.Click += new System.EventHandler(this.resetScores_Click);
             // 
             // informationsToolStripMenuItem
             // 
@@ -173,6 +181,7 @@
             this.seeInstruction.Name = "seeInstruction";
             this.seeInstruction.Size = new System.Drawing.Size(131, 22);
             this.seeInstruction.Text = "Instruction";
+            this.seeInstruction.Click += new System.EventHandler(this.seeInstruction_Click);
             // 
             // seeAuthor
             // 
@@ -180,6 +189,7 @@
             this.seeAuthor.Name = "seeAuthor";
             this.seeAuthor.Size = new System.Drawing.Size(131, 22);
             this.seeAuthor.Text = "Author";
+            this.seeAuthor.Click += new System.EventHandler(this.seeAuthor_Click);
             // 
             // number1
             // 
@@ -528,12 +538,36 @@
             this.pointsLabel.TabIndex = 33;
             this.pointsLabel.Text = "0";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Gray;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(329, 81);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 30);
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
+            // 
+            // undoMove
+            // 
+            this.undoMove.AutoSize = true;
+            this.undoMove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.undoMove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.undoMove.Location = new System.Drawing.Point(334, 86);
+            this.undoMove.Name = "undoMove";
+            this.undoMove.Size = new System.Drawing.Size(90, 20);
+            this.undoMove.TabIndex = 35;
+            this.undoMove.Text = "Undo move";
+            this.undoMove.Click += new System.EventHandler(this.undoMove_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(441, 544);
+            this.Controls.Add(this.undoMove);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pointsLabel);
             this.Controls.Add(this.number11);
             this.Controls.Add(this.number15);
@@ -591,6 +625,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.field10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.field15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.field16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -642,6 +677,8 @@
         private System.Windows.Forms.Label number15;
         private System.Windows.Forms.Label number11;
         private System.Windows.Forms.Label pointsLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label undoMove;
     }
 }
 

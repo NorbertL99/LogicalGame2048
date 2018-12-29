@@ -39,8 +39,16 @@ properly.
 This version is 0.4. Moveing fields up added. 
 Moveing fields right added. Checking of move is 
 completed and after completed adding random
-number in random empty place.Updates will be
-given soon.
+number in random empty place
+
+This version is 0.5. Moveing fields left added.
+Checking for possible moves added, if there is no
+possible move, lose, added. Undo option added.
+See TOP 10 scores added. Reset TOP 10 scores added.
+See author info added. See instruction added.
+Core of game work properly. Save game, load game
+and update best scores need to be updated. Erros
+handle need to be adde. Updates will be given soon
 
 /////////////////////////////////////////////
 ////////////////How to applay////////////////
